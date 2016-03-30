@@ -1,0 +1,24 @@
+extends ../layout
+
+block head
+	title Eliminar Docente
+	
+block content
+	if mensaje
+		div.alert.alert-success.alert-dismissible(role="alert")
+			button.close(type="button", data-dismiss="alert", aria-label="Cerrar")
+				span(aria-hidden="true") &times
+			strong= mensaje
+	
+	div.col-md-6
+		div.well
+			form(method="post")
+				if docente
+					div
+						span &iquest;Eliminar el docente 
+							strong #{docente.nombre} (DNI #{docente.dni})
+							| ?
+					br
+				div
+					a.btn.btn-warning(href="/admin") Volver
+					input.btn.btn-danger(type="submit", value="ELIMINAR")

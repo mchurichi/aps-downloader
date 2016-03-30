@@ -1,0 +1,25 @@
+extends ../layout
+
+block head
+	title Descarga de APS
+
+block content
+	if mensaje
+		div.alert.alert-danger.alert-dismissible(role="alert")
+			button.close(type="button", data-dismiss="alert", aria-label="Close")
+				span(aria-hidden="true") &times
+			strong= mensaje
+
+	div.row.well.text-center
+		div.col-md-4(style={float: 'none', 'margin-left': 'auto', 'margin-right': 'auto'})
+			h3 Ingrese su DNI para descargar APS
+			span (sin puntos)
+			br
+			br
+			form.row.text-center(method="post")
+				div.col-md-8
+					div.form-group
+						input.form-control(name="dni", type="text", required)
+				div.col-md-4
+					div.form-group
+						input.btn.btn-primary.btn-block(type="submit", value="Aceptar")

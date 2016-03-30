@@ -1,0 +1,26 @@
+extends ../layout
+
+block head
+	title Nuevo Docente
+	
+block content
+	if mensaje
+		div.alert.alert-success.alert-dismissible(role="alert")
+			button.close(type="button", data-dismiss="alert", aria-label="Close")
+				span(aria-hidden="true") &times
+			strong= mensaje
+			
+	div.col-md-6
+		form(method="post")
+			div.form-group
+				label DNI
+				input.form-control(name="dni", type="text", required)
+			div.form-group
+				label Nombre
+				input.form-control(name="nombre", type="text", required)
+			div.form-group
+				label Link Archivo
+				input.form-control(name="archivo", type="text", required)
+			
+			a.btn.btn-danger(href="/admin") Cancelar
+			input.btn.btn-success(type="submit", value="Guardar")
